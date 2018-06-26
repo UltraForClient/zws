@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <link rel="stylesheet" href="{{ asset('asset/css/vendors.bundle.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/style.bundle.css') }}">
+    <style>
+        .form_zlecenia {
+            width: 24%;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <div class="m-grid m-grid--hor m-grid--root m-page">
+        <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signin m-login--2 m-login-2--skin-2" id="m_login">
+            <div class="m-grid__item m-grid__item--fluid	m-login__wrapper">
+                <div class="m-login__container">
+                    <div class="m-login__signin">
+                        <div class="m-login__head">
+                            <h3 class="text-center m--font-normal">
+                                Zaloguj się
+                            </h3>
+                        </div>
+                        <form class="m-login__form m-form" method="POST">
+                            {% if error %}
+                                <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+                            <div class="form-group m-form__group">
+                                <input class="form-control m-input" type="text" placeholder="Email" id="username" name="_username" value="{{ last_username }}" autocomplete="off">
+                            </div>
+                            <div class="form-group m-form__group">
+                                <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Hasło" id="password" name="_password" value="{{ last_username }}">
+                            </div>
+                            <div class="row m-login__form-sub">
+                                <div class="col m--align-right m-login__form-right">
+                                    <a href="{{ path('forget') }}" id="m_login_forget_password" class="m-link">
+                                        Zapomniałeś hasło ?
+                                    </a>
+                                </div>
+                            </div>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <div class="m-login__form-action">
+                                <button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">
+                                    Zaloguj się
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

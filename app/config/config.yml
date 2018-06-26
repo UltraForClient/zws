@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -71,5 +71,5 @@ vich_uploader:
     mappings:
         task:
             uri_prefix: '%app.path.images%/task'
-            upload_destination: '%kernel.root_dir%/../public/uploads/images/task'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/task'
             namer: Vich\UploaderBundle\Naming\UniqidNamer

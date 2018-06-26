@@ -1,0 +1,182 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('asset/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/awesome-bootstrap-checkbox.css') }}">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>{% endblock %}
+
+{% block body %}
+    <div class="subsite-wrapp">
+        <div class="container">
+            <div class="contract-form private">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="header-form">
+                        <h5>Wypełnij formularz zlecenia jako...</h5>
+                        <div class="checkboxes">
+                            <div class="radio radio-info radio-inline">
+                                <input type="radio" id="inlineRadio1" value="man" name="mode" checked>
+                                <label for="inlineRadio1"> Osoba prywatna </label>
+                            </div>
+                            <div class="radio radio-inline">
+                                <input type="radio" id="inlineRadio2" value="company" name="mode">
+                                <label for="inlineRadio2"> Firma </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row2">
+                        <div class="form-row">
+                            <div class="col-2-2">
+                                <h3>Dane do faktury</h3>
+                                <div class="row">
+                                    <div class="form-group col-2">
+                                        <h4>Imię <span>*</span></h4>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Jan" required>
+                                    </div>
+                                    <div class="form-group col-2">
+                                        <h4>Nazwisko <span>*</span></h4>
+                                        <input type="text" class="form-control" id="surname" name="surname" placeholder="Kowalski" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-2">
+                                        <h4>Telefon <span>*</span></h4>
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="+48 656 858 458" required>
+                                    </div>
+                                    <div class="form-group col-2">
+                                        <h4>Adres e-mail <span>*</span></h4>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="adres@jankowaski.pl" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2-2">
+                                <h3 class="private-no">Dane firmy</h3>
+                                <h3 class="private-yes">Dane adresowe</h3>
+                                <div>
+                                    <div class="form-group private-no">
+                                        <h4>Nazwa firmy <span>*</span></h4>
+                                        <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Euro-Gaz Sp. z o.o.">
+                                    </div>
+                                    <div class="form-group  private-no">
+                                        <h4>NIP <span>*</span></h4>
+                                        <input type="text" class="form-control" id="NIP" name="NIP" placeholder="959-160-83-52">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-2">
+                                        <h4>Ulica <span>*</span></h4>
+                                        <input type="text" class="form-control" id="street" name="street" placeholder="ul. Przemysłowa" required>
+                                    </div>
+                                    <div class="form-group col-2">
+                                        <h4>Nr domu <span>*</span></h4>
+                                        <input type="text" class="form-control" id="houseNumber" name="houseNumber" placeholder="25" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-2">
+                                        <h4>Kod pocztowy <span>*</span></h4>
+                                        <input type="text" class="form-control" id="postCode" name="postCode" placeholder="25-312" required>
+                                    </div>
+                                    <div class="form-group col-2">
+                                        <h4>Miejscowość <span>*</span></h4>
+                                        <input type="text" class="form-control" id="place" name="place" placeholder="Kielce" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-2-2">
+                                <h3>Miejsce wykonania zlecenia</h3>
+                                <div>
+                                    <div class="row">
+                                        <div class="form-group col-2">
+                                            <h4>Ulica <span>*</span></h4>
+                                            <input type="text" class="form-control" id="task_street" name="task_street" placeholder="ul. Przemysłowa" required>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <h4>Nr domu <span>*</span></h4>
+                                            <input type="text" class="form-control" id="task_houseNumber" name="task_houseNumber" placeholder="25" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-2">
+                                            <h4>Kod pocztowy <span>*</span></h4>
+                                            <input type="text" class="form-control" id="task_postCode" name="task_postCode" placeholder="25-312" required>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <h4>Miejscowość <span>*</span></h4>
+                                            <input type="text" class="form-control" id="task_place" name="task_place" placeholder="Kielce" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2-2">
+                                <h3>Informacje o zleceniu</h3>
+                                <div class="form-group">
+                                    <h4>Rodzaj zlecenia <span>*</span></h4>
+                                    <select class="form-control" name="task_task" required>
+                                        <option value="" disabled selected>Wybierz rodzaj zlecenia</option>
+                                        <option value="studnia głębinowa">studnia głębinowa</option>
+                                        <option value="studnia depresyjna">studnia depresyjna</option>
+                                        <option value="zestawy igłofiltrowe">zestawy igłofiltrowe</option>
+                                        <option value="pale Wiercone">pale Wiercone</option>
+                                        <option value="pompy głębinowe">pompy głębinowe</option>
+                                        <option value="siatka filtracyjna">siatka filtracyjna</option>
+                                        <option value="wyposażenie studni">wyposażenie studni</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row no-after">
+                            <div class="form-group col-2-2" style="width:100%">
+                                <h4>Uwagi do zlecenia <span>*</span></h4>
+                                <textarea class="form-control" name="task_comments" placeholder="" required></textarea>
+                                <div class="form-bottom radio-btns">
+                                    <div class="form-group">
+                                        <object data="data:image/svg+xml;base64,{{ asset('asset/folder.svg') }}" type="image/svg+xml"></object>
+                                        <p class="file-load--">Dodaj plik np: mapka działki (JPG,PDF)</p>
+                                    </div>
+
+                                    <input type="file" name="task_imageFile" id="task_imageFile" class="form-control-file">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-bottom radio-btns">
+                        <div>
+                            <div class="checkbox">
+                                <input id="checkbox3" type="checkbox" name="radioInline3" required>
+                                <label for="checkbox3">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w powyższym formularzu przez Zakład Wierceń Studziennych Jerzy Wilman dla potrzeb niezbędnych dla realizacji procesu zamówienia. Rozumiem, że w każdej chwili mogę odwołać zgodę. Dane te będą przetwarzane zgodnie z zapisami Polityki prywatności. Administratorem moich danych osobowych będzie Zakład Wierceń Studziennych Jerzy Wilman 25-139 Kielce, ul. Chodkiewicza 111, email: jwilman@op.pl twilman@interia.pl.
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="checkbox4" type="checkbox" name="radioInline4" required>
+                                <label for="checkbox4">
+                                    Zapoznałem się z informacjami o przetwarzaniu danych osobowych znajdują się w <a href="{{ path('policy') }}"> Polityce prywatności.</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-bottom">
+                        <div>
+                            <p>Przejdź do</p>
+                            <button type="submit" class="btn">Podsumowania</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="{{ asset('asset/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('asset/js/addons.js') }}"></script>
+{% endblock %}
