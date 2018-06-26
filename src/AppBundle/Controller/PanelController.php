@@ -98,7 +98,9 @@ class PanelController extends Controller
         $req = $request->request->all();
 
         if(count($req) > 0) {
-            $task->setImageFile($request->files->get('task_imageFile'));
+            if($request->files->get('task_imageFile')) {
+                $task->setImageFile($request->files->get('task_imageFile'));
+            }
 
             $formTask = $this->createForm(TaskType::class, $task);
 

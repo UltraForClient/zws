@@ -60,7 +60,7 @@ class HomeController extends Controller
             }
 
             $task = new Task();
-            dump($request->files->get('task_imageFile'));
+
             if($request->files->get('task_imageFile')) {
                 $task->setImageFile($request->files->get('task_imageFile'));
             }

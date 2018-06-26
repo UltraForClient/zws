@@ -8,7 +8,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use AppBundle\Entity\User;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\TaskRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TaskRepository")
  * @ORM\HasLifecycleCallbacks
  * @Vich\Uploadable
  */

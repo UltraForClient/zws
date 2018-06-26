@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use AppBundle\Entity\Task;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class User implements UserInterface, \Serializable
