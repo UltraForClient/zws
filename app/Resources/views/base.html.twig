@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}zws!{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ asset('asset/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/top.css') }}">
@@ -20,7 +20,6 @@
         </div>
         <div class="menu_system">
             <a href="http://zws.com.pl">Strona główna</a>
-            <a href="{{ path('policy') }}">Polityka prywatności</a>
             {% if not app.user %}
                 <a href="{{ path('login') }}">Logowanie</a>
             {% elseif is_granted('ROLE_ADMIN') %}
@@ -30,10 +29,11 @@
             {% endif %}
 
             {% if app.user %}
+                <a href="{{ path('change_password') }}"></a>
                 <a href="{{ path('logout') }}">Wyloguj się</a>
             {% endif %}
         </div>
-        <a class="form_zlecenia" href="{{ path('form') }}">Formualarz zalecenia</a>
+        <a class="form_zlecenia" href="{{ path('form') }}">Formularz zleceń</a>
     </header>
     {% block body %}{% endblock %}
 </div>
