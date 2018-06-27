@@ -58,7 +58,7 @@
                         Dołączony plik:
                     </label>
                     <div class="col-7">
-                        <a href="{{ vich_uploader_asset(task, 'imageFile') }}" target="_blank">Pokaż plik</a>
+                        <a href="{{ app.request.getUriForPath(vich_uploader_asset(task, 'imageFile')) }}" target="_blank">Pokaż plik</a>
                     </div>
                 </div>
                 {% endif %}

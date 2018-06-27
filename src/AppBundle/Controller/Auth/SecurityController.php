@@ -60,7 +60,7 @@ class SecurityController extends Controller
                 $password = $this->passwordGenerator->generate();
                 $user->setPassword($this->passwordEncoder->encodePassword($user, $password));
 
-                //$this->sendMail($email, $password);
+                $this->sendMail($email, $password);
 
                 return $this->redirectToRoute('login');
 
@@ -85,7 +85,7 @@ class SecurityController extends Controller
     private function sendMail($email, $password)
     {
         $message = (new \Swift_Message('Zakład wiercenia Studziennych'))
-            ->setFrom(getenv('MAILER_URL'))
+            ->setFrom('zlecenia@zws.com.pl ')
             ->setTo($email)
             ->setBody(
                 $this->renderView('email/forget.html.twig', [

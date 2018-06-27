@@ -81,7 +81,7 @@ class AdminController extends Controller
         if(count($req) > 0) {
             $task->setValuation($req['price']);
 
-//            $this->sendMail($task->getUser()->getEmail(), $req);
+            $this->sendMail($task->getUser()->getEmail(), $req);
 
             $this->em->flush();
 
@@ -152,7 +152,7 @@ class AdminController extends Controller
     private function sendMail($email, array $param)
     {
         $message = (new \Swift_Message('Zakład wiercenia Studziennych'))
-            ->setFrom(getenv('MAILER_URL'))
+            ->setFrom('zlecenia@zws.com.pl')
             ->setTo($email)
             ->setBody(
                 $this->renderView('email/valuation.html.twig', [

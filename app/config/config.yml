@@ -75,4 +75,5 @@ vich_uploader:
         task:
             uri_prefix: '%app.path.images%/task'
             upload_destination: '%kernel.root_dir%/../web/uploads/images/task'
-            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            namer:
+                service: vich_uploader.namer_origname

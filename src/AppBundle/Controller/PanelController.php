@@ -160,10 +160,10 @@ class PanelController extends Controller
     private function sendMail($email, $password, $template)
     {
         $message = (new \Swift_Message('Zakład wiercenia Studziennych'))
-            ->setFrom(getenv('MAILER_URL'))
+            ->setFrom('zlecenia@zws.com.pl ')
             ->setTo($email)
             ->setBody(
-                $this->renderView($template, [
+                $this->renderView('email/' . $template, [
                     'email' => $email,
                     'password' => $password
                 ]),

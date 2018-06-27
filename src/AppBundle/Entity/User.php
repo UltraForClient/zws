@@ -301,6 +301,6 @@ class User implements UserInterface, \Serializable
 
     public function unserialize($serialized)
     {
-        list($this->id, $this->username, $this->name, $this->surname, $this->email, $this->password) = unserialize($serialized, ['allowed_classes' => false]);
+        list($this->id, $this->username, $this->name, $this->surname, $this->email, $this->password) = unserialize($serialized);
     }
 }

@@ -33,3 +33,5 @@ security:
         - { path: ^/panel, roles: ROLE_USER }
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/email, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/form, roles: IS_AUTHENTICATED_ANONYMOUSLY }

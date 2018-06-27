@@ -76,9 +76,9 @@ class HomeController extends Controller
                 $password = $this->passwordGenerator->generate();
                 $user->setPassword($this->passwordEncoder->encodePassword($user, $password));
 
-//                $this->sendMail($data['user']['email'], $password, 'email.html.twig');
+                $this->sendMail($data['user']['email'], $password, 'email.html.twig');
             } else {
-//                $this->sendMail($data['user']['email'], '', 'email2.html.twig');
+                $this->sendMail($data['user']['email'], '', 'email2.html.twig');
             }
 
 
@@ -133,10 +133,10 @@ class HomeController extends Controller
     private function sendMail($email, $password, $template)
     {
         $message = (new \Swift_Message('Zakład wiercenia Studziennych'))
-            ->setFrom(getenv('MAILER_URL'))
+            ->setFrom('zlecenia@zws.com.pl ')
             ->setTo($email)
             ->setBody(
-                $this->renderView($template, [
+                $this->renderView('email/' . $template, [
                     'email' => $email,
                     'password' => $password
                 ]),
