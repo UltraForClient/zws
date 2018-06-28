@@ -28,39 +28,23 @@
                 <tr>
                     <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
                         <p>
-                            <strong>Dane do konta</strong>
-                            <br>Login: <strong>{{ email }}</strong>
-                            <br>Hasło: <strong>{{ password }}</strong>
-                            <br>Link do panelu: <strong><a href="{{ app.request.getUriForPath({{ path('home') }}) }}">Panel klienta</a></strong>
-                        </p>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td style="border-bottom:1px solid #eaeaea;">
-            <table width="100%" style=" width:100%; border:none; border-collapse:collapse; border-spacing:0;">
-                <tr>
-                    <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
-                        <p>
                             <strong>Twoje dane </strong>
                             <br>Imię i nazwisko: <strong>{{ user.name }} {{ user.surname }}</strong>
                             <br>Telefon: <strong>{{ user.phone }}</strong>
                             <br>Email: <strong>{{ user.email }}</strong>
-                            <br>Adres: <strong>{{ user.palce }} {{ user.postCode }} {{ user.street }} {{ user.houseNumber }}</strong>
+                            <br>Adres: <strong>{{ user.place }} {{ user.postCode }} {{ user.street }} {{ user.houseNumber }}</strong>
                         </p>
-                    </td>
-                    <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
+
                         <p>
                             <strong>Miejsce zlecenia </strong>
-                            <br>Adres: <strong>{{ task.palce }} {{ task.postCode }} {{ task.street }} {{ task.houseNumber }}</strong>
+                            <br>Adres: <strong>{{ task.place }} {{ task.postCode }} {{ task.street }} {{ task.houseNumber }}</strong>
                             <br>Numer działki: <strong>{{ task.nrPlot }}</strong>
                         </p>
-                    </td>
-                    <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
+
                         <p>
                             <strong>Dane zlecenia </strong>
                             <br>Rodzaja zlecenia: <strong>{{ task.task }}</strong>
-                            {% if term %}
+                            {% if task.term %}
                                 <br>Szacowany temin realizacji: <strong>{{ task.term }}</strong>
                             {% endif %}
                             <br>Uwagi: <strong>{{ task.comments }}</strong>
