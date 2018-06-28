@@ -37,6 +37,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if($user = $this->getUser()) {
+            if($user->getRoles() === ['ROLE_ADMIN']) {
+                return $this->redirectToRoute('admin');
+            } elseif($user->getRoles() === ['ROLE_USER']) {
+                return $this->redirectToRoute('tasks');
+            }
+        } else {
+            return $this->redirectToRoute('form');
+        }
+
         return $this->render('home/index.html.twig', [
         ]);
     }

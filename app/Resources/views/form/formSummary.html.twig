@@ -19,7 +19,11 @@
                 <br>
                 Pozdrawiamy zws.com.pl
             </p>
-            <a href="{{ path('login') }}" class="btn btn-primary">Przejdź do logowania</a>
+            {% if not app.user %}
+                <a href="{{ path('login') }}" class="btn btn-primary">Przejdź do logowania</a>
+            {% else %}
+                <a href="{{ path('panel') }}" class="btn btn-primary">Wróć do panelu klienta</a>
+            {% endif %}
         </div>
      </div>
 {% endblock %}

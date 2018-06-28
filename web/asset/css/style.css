@@ -18,7 +18,7 @@
 .contract-form  .form-control:focus{box-shadow:none;}
 .contract-form  .form-group{margin-bottom:10px;}
 .contract-form  textarea.form-control{padding:16px; height:182px;}
-.contract-form  select{color:#6f6f6f; font-size:14px; line-height:14px; font-weight:300; height:43px; appearance:none;-moz-appearance:none; /* Firefox */-webkit-appearance:none; background: #d2d2d4 url(../images/select2-arrow.jpg) no-repeat; background-position:right top; background-size:auto 100%;}
+.contract-form  select{color:#6f6f6f; font-size:14px; line-height:14px; font-weight:300; height:43px; appearance:none;-moz-appearance:none; /* Firefox */-webkit-appearance:none; background: #d2d2d4; background-position:right top; background-size:auto 100%;}
 .contract-form  select option{padding-top:10px; padding-bottom:10px;}
 .contract-form  .form-group-x2{margin: 0 -10px; }
 .contract-form  .form-group-x2:after{content:''; clear:both; display:block;}
@@ -83,7 +83,7 @@
 .contract-form .form-group.margin0{margin: 0 ;}
 .contract-form .form-control.w260{width:260px; display:inline-block; float:left; }
 .contract-form .form-group p{font-size:16px; font-weight:700; line-height:48px; display:inline-block; float:left; color:#000; padding: 0 0 0 14px;}
-.contract-form  select.form-control{background:#f7f7f7 url(../select.svg) no-repeat; background-position:right center; background-size: auto 100%; cursor:pointer;}
+.contract-form  select.form-control{background:#f7f7f7; background-position:right center; background-size: auto 100%; cursor:pointer;}
 .contract-form  select.form-control:hover{opacity:0.8;}
 .contract-form .private-yes{display:none;}
 .contract-form.private .private-yes{display:inline-block;}
@@ -126,9 +126,7 @@
 .form-bottom.radio-btns .radio label{font-size:13px; line-heigth:16px;}
 .form-bottom.radio-btns p.file-load--{
 	font-weight:300;
-	padding:10px 0 10px 45px;
-	background:url(../folder.svg) no-repeat;
-	background-position:left 10px;
+	padding:10px 0 0 0;
 	color:#333;
 	margin: 0 ;
 }
