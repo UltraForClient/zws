@@ -30,7 +30,7 @@
                             <strong>Dane do konta</strong>
                             <br>Login: <strong>{{ email }}</strong>
                             <br>Hasło: <strong>{{ password }}</strong>
-                            <br>Link do panelu: <strong><a href="{{ path('home') }}">Panel klienta</a></strong>
+                            <br>Link do panelu: <strong><a href="{{ app.request.getUriForPath({{ path('home') }}) }}">Panel klienta</a></strong>
                         </p>
                     </td>
                 </tr>

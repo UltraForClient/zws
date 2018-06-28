@@ -29,7 +29,11 @@
             {% endif %}
 
             {% if app.user %}
-                <a href="{{ path('change_password') }}"></a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('change_password_admin') }}">Zmień hasło</a>
+            {% else %}
+                <a href="{{ path('change_password') }}">Zmień hasło</a>
+            {% endif %}
                 <a href="{{ path('logout') }}">Wyloguj się</a>
             {% endif %}
         </div>

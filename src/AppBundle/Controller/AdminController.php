@@ -32,7 +32,8 @@ class AdminController extends Controller
         $tasks = $this->em->getRepository(Task::class)->findAll();
 
         return $this->render('admin/index.html.twig', [
-            'tasks' => $tasks
+            'tasks' => $tasks,
+            'task' => true
         ]);
     }
 
@@ -44,7 +45,8 @@ class AdminController extends Controller
         $users = $this->em->getRepository(User::class)->findAll();
         array_shift($users);
         return $this->render('admin/listClient.html.twig', [
-            'users' => $users
+            'users' => $users,
+            'task' => false
         ]);
     }
 
@@ -57,7 +59,8 @@ class AdminController extends Controller
 
         return $this->render('admin/user.html.twig', [
             'user' => $user,
-            'tasks' => $tasks
+            'tasks' => $tasks,
+            'task' => false
         ]);
     }
 
@@ -145,7 +148,8 @@ class AdminController extends Controller
 
         return $this->render('admin/changePassword.html.twig', [
             'tasks' => false,
-            'error' => $error
+            'error' => $error,
+            'task' => null
         ]);
     }
 
