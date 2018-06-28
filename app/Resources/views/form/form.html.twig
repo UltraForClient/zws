@@ -33,21 +33,21 @@
                                 <div class="row">
                                     <div class="form-group col-2">
                                         <h4>Imię <span>*</span></h4>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Jan" required>
+                                        <input type="text" class="form-control" id="name" name="name" required>
                                     </div>
                                     <div class="form-group col-2">
                                         <h4>Nazwisko <span>*</span></h4>
-                                        <input type="text" class="form-control" id="surname" name="surname" placeholder="Kowalski" required>
+                                        <input type="text" class="form-control" id="surname" name="surname" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-2">
                                         <h4>Telefon <span>*</span></h4>
-                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="+48 123 456 789" required>
+                                        <input type="text" class="form-control" id="phone" name="phone" required>
                                     </div>
                                     <div class="form-group col-2">
                                         <h4>Adres e-mail <span>*</span></h4>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="adres@jankowalski.pl" required>
+                                        <input type="email" class="form-control" id="email" name="email" required>
                                     </div>
                                 </div>
                             </div>
@@ -57,31 +57,31 @@
                                 <div>
                                     <div class="form-group private-no">
                                         <h4>Nazwa firmy <span>*</span></h4>
-                                        <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Nazwa firmy">
+                                        <input type="text" class="form-control" id="companyName" name="companyName">
                                     </div>
                                     <div class="form-group  private-no">
                                         <h4>NIP <span>*</span></h4>
-                                        <input type="text" class="form-control" id="NIP" name="NIP" placeholder="123-312-12-21">
+                                        <input type="text" class="form-control" id="NIP" name="NIP">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-2">
                                         <h4>Ulica <span>*</span></h4>
-                                        <input type="text" class="form-control" id="street" name="street" placeholder="ul. Dowolna" required>
+                                        <input type="text" class="form-control" id="street" name="street" required>
                                     </div>
                                     <div class="form-group col-2">
                                         <h4>Nr domu <span>*</span></h4>
-                                        <input type="text" class="form-control" id="houseNumber" name="houseNumber" placeholder="21" required>
+                                        <input type="text" class="form-control" id="houseNumber" name="houseNumber" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-2">
                                         <h4>Kod pocztowy <span>*</span></h4>
-                                        <input type="text" class="form-control" id="postCode" name="postCode" placeholder="12-312" required>
+                                        <input type="text" class="form-control" id="postCode" name="postCode" required>
                                     </div>
                                     <div class="form-group col-2">
                                         <h4>Miejscowość <span>*</span></h4>
-                                        <input type="text" class="form-control" id="place" name="place" placeholder="Kielce" required>
+                                        <input type="text" class="form-control" id="place" name="place" required>
                                     </div>
                                 </div>
                             </div>
@@ -94,22 +94,26 @@
                                     <div class="row">
                                         <div class="form-group col-2">
                                             <h4>Ulica <span>*</span></h4>
-                                            <input type="text" class="form-control" id="task_street" name="task_street" placeholder="ul. Dowolna" required>
+                                            <input type="text" class="form-control" id="task_street" name="task_street" required>
                                         </div>
                                         <div class="form-group col-2">
                                             <h4>Nr domu <span>*</span></h4>
-                                            <input type="text" class="form-control" id="task_houseNumber" name="task_houseNumber" placeholder="21" required>
+                                            <input type="text" class="form-control" id="task_houseNumber" name="task_houseNumber" required>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-2">
                                             <h4>Kod pocztowy <span>*</span></h4>
-                                            <input type="text" class="form-control" id="task_postCode" name="task_postCode" placeholder="12-312" required>
+                                            <input type="text" class="form-control" id="task_postCode" name="task_postCode" required>
                                         </div>
                                         <div class="form-group col-2">
                                             <h4>Miejscowość <span>*</span></h4>
-                                            <input type="text" class="form-control" id="task_place" name="task_place" placeholder="Kielce" required>
+                                            <input type="text" class="form-control" id="task_place" name="task_place" required>
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>Numer działki <span>*</span></h4>
+                                        <input type="text" class="form-control" id="task_nrPlot" name="task_nrPlot" required>
                                     </div>
                                 </div>
                             </div>
@@ -128,12 +132,16 @@
                                         <option value="wyposażenie studni">wyposażenie studni</option>
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <h4>Szacowany termin realizacji</h4>
+                                    <input type="text" class="form-control" id="task_term" name="task_term" required>
+                                </div>
                             </div>
                         </div>
                         <div class="form-row no-after">
                             <div class="form-group col-2-2" style="width:100%">
                                 <h4>Uwagi do zlecenia <span>*</span></h4>
-                                <textarea class="form-control" name="task_comments" placeholder="" required></textarea>
+                                <textarea class="form-control" name="task_comments" required></textarea>
                                 <div class="form-bottom radio-btns">
                                     <div class="form-group">
                                         <object data="data:image/svg+xml;base64,{{ asset('asset/folder.svg') }}" type="image/svg+xml"></object>

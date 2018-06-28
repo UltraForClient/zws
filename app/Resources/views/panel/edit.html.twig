@@ -37,6 +37,10 @@
                             <input type="text" class="form-control" id="place" name="place" placeholder="Kielce" value="{{ task.place }}" required>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <h4>Numer działki <span>*</span></h4>
+                        <input type="text" class="form-control" id="nrPlot" name="nrPlot" value="{{ task.nrPlot }}" required>
+                    </div>
                     <h3>Informacje o zleceniu</h3>
                     <div class="form-group">
                         <h4>Rodzaj zlecenia <span>*</span></h4>
@@ -50,6 +54,10 @@
                             <option value="siatka filtracyjna">siatka filtracyjna</option>
                             <option value="wyposażenie studni">wyposażenie studni</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <h4>Szacowany termin realizacji</h4>
+                        <input type="text" class="form-control" id="term" name="term" value="{{ task.term }}" required>
                     </div>
                     <div class="form-row no-after">
                         <div class="form-group col-2-2" style="width:100%">

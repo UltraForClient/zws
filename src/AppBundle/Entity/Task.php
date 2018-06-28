@@ -69,6 +69,16 @@ class Task
     private $imageFile;
 
     /**
+     * @ORM\Column(name="nr_plot", type="string", length=64)
+     */
+    private $nrPlot;
+
+    /**
+     * @ORM\Column(name="term", type="string", length=128, nullable=true)
+     */
+    private $term;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -199,14 +209,34 @@ class Task
         return $this->imageFile;
     }
 
+    public function setNrPlot($nrPlot)
+    {
+        $this->nrPlot = $nrPlot;
+    }
+
+    public function getNrPlot()
+    {
+        return $this->nrPlot;
+    }
+
+    public function setTerm($term)
+    {
+        $this->term = $term;
+    }
+
+    public function getTerm()
+    {
+        return $this->term;
+    }
+
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+    }
+
     public function getUser()
     {
         return $this->user;
-    }
-
-    public function setUser($user)
-    {
-        $this->user = $user;
     }
 
     public function getPublishedAt()
@@ -224,7 +254,7 @@ class Task
         return $this->deletedAt;
     }
 
-    public function setDeletedAt($deletedAt)
+    public function setDeletedAt(\DateTime $deletedAt)
     {
         $this->deletedAt = $deletedAt;
     }

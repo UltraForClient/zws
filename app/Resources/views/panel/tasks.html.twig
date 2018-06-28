@@ -33,14 +33,14 @@
             </table>
         </div>
     </div>
-    <div class="modal fade" id="m_modal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="m_modal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow: auto!important;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Nowe zlecenie</h5>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" enctype="multipart/form-data">>
+                    <form method="POST" enctype="multipart/form-data">
                     <div class="header-form">
                         <h5>Formularz zlecenia</h5>
                     </div>
@@ -65,6 +65,10 @@
                                 <input type="text" class="form-control" id="place" name="place" placeholder="Kielce" required>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <h4>Numer działki <span>*</span></h4>
+                            <input type="text" class="form-control" id="nrPlot" name="nrPlot" required>
+                        </div>
                         <h3>Informacje o zleceniu</h3>
                         <div class="form-group">
                             <h4>Rodzaj zlecenia <span>*</span></h4>
@@ -78,6 +82,10 @@
                                 <option value="siatka filtracyjna">siatka filtracyjna</option>
                                 <option value="wyposażenie studni">wyposażenie studni</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <h4>Szacowany termin realizacji</h4>
+                            <input type="text" class="form-control" id="term" name="term" required>
                         </div>
                         <div class="form-row no-after">
                             <div class="form-group col-6-2" style="width:100%">
