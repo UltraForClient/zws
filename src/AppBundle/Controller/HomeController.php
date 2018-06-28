@@ -86,11 +86,12 @@ class HomeController extends Controller
                 $password = $this->passwordGenerator->generate();
                 $user->setPassword($this->passwordEncoder->encodePassword($user, $password));
 
-                $this->sendMail($data['user']['email'], $password, 'email.html.twig', $task, $user);
+                $this->sendMail($password, 'email.html.twig', $task, $user);
             } else {
-                $this->sendMail($data['user']['email'], '', 'email2.html.twig', $task, $user);
+                $this->sendMail('', 'email2.html.twig', $task, $user);
             }
 
+            $this->sendMail('', 'email-admin.html.twig', $task, $user, 'zlecenia@zws.com.pl');
 
             $task->setUser($user);
 
@@ -129,25 +130,15 @@ class HomeController extends Controller
         ]);
     }
 
-    /**
-     * @Route("/email", name="email")
-     */
-    public function email(Request $request)
+    private function sendMail($password, $template, $task, $user, $email = null)
     {
-        return $this->render('email/email.html.twig', [
-            'email' => 'email@gmail.com',
-            'password' => 'asdasdasdasdasd'
-        ]);
-    }
+        $email = $email === null ? $user->getEmail() : $email;
 
-    private function sendMail($email, $password, $template, $task, $user)
-    {
         $message = (new \Swift_Message('Zakład wiercenia Studziennych'))
-            ->setFrom('zlecenia@zws.com.pl ')
+            ->setFrom('zlecenia@zws.com.pl')
             ->setTo($email)
             ->setBody(
                 $this->renderView('email/' . $template, [
-                    'email' => $email,
                     'password' => $password,
                     'task' => $task,
                     'user' => $user

@@ -18,7 +18,7 @@
     <tr>
         <td  style=" width:100%; padding:20px 0;">
             <h3>Numer zlecenia : ZWS/{{ 'now'|date('Y') }}/{{ task.id }}</h3>
-            <p>Wkrótce zostanie przygotowana i przesłana wycena na podstawie podanych parametrów.</p>
+            <p>Zostało dodane nowe zleceni. Szczegóły poniżej oraz w panelu administraotra</p>
         </td>
     </tr>
 
@@ -28,33 +28,19 @@
                 <tr>
                     <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
                         <p>
-                            <strong>Dane do konta</strong>
-                            <br>Login: <strong>{{ user.email }}</strong>
-                            <br>Hasło: <strong>{{ password }}</strong>
-                            <br>Link do panelu: <strong><a href="{{ app.request.getSchemeAndHttpHost() }}{{ path('home') }}">Panel klienta</a></strong>
-                        </p>
-                    </td>
-                </tr>
-            </table>
-            <table width="100%" style=" width:100%; border:none; border-collapse:collapse; border-spacing:0;">
-                <tr>
-                    <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
-                        <p>
-                            <strong>Twoje dane </strong>
+                            <strong>Dane klienta </strong>
                             <br>Imię i nazwisko: <strong>{{ user.name }} {{ user.surname }}</strong>
                             <br>Telefon: <strong>{{ user.phone }}</strong>
                             <br>Email: <strong>{{ user.email }}</strong>
                             <br>Adres: <strong>{{ user.place }} {{ user.postCode }} {{ user.street }} {{ user.houseNumber }}</strong>
                         </p>
-                    </td>
-                    <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
+
                         <p>
                             <strong>Miejsce zlecenia </strong>
                             <br>Adres: <strong>{{ task.place }} {{ task.postCode }} {{ task.street }} {{ task.houseNumber }}</strong>
                             <br>Numer działki: <strong>{{ task.nrPlot }}</strong>
                         </p>
-                    </td>
-                    <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
+
                         <p>
                             <strong>Dane zlecenia </strong>
                             <br>Rodzaja zlecenia: <strong>{{ task.task }}</strong>
