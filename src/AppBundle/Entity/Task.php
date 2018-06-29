@@ -79,6 +79,16 @@ class Task
     private $term;
 
     /**
+     * @ORM\Column(name="date", type="datetime", nullable=true)
+     */
+    private $date;
+
+    /**
+     * @ORM\Column(name="valuation_comments", type="text", nullable=true)
+     */
+    private $valuationComments;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -229,9 +239,29 @@ class Task
         return $this->term;
     }
 
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    public function getDate()
+    {
+        return $this->date;
+    }
+
     public function setUser(User $user)
     {
         $this->user = $user;
+    }
+
+    public function getValuationComments()
+    {
+        return $this->valuationComments;
+    }
+
+    public function setValuationComments($valuationComments)
+    {
+        $this->valuationComments = $valuationComments;
     }
 
     public function getUser()

@@ -69,7 +69,7 @@ class PanelController extends Controller
             $this->sendMail($user->getEmail(), '', 'email2.html.twig');
 
             return $this->render('panel/tasks.html.twig', [
-                'tasks' => $tasks
+                'tasks' => array_reverse($tasks)
             ]);
         }
 

@@ -18,9 +18,6 @@
     <tr>
         <td  style=" width:100%; padding:20px 0;">
             <h3>Numer zlecenia : ZWS/{{ 'now'|date('Y') }}/{{ task.id }}</h3>
-            <p>Wycena została dokonana. Cena: {{ price }}zł. Przewidywany czas rozpoczęcia prac: {{ date|date('Y-m-d H:i:s') }}</p>
-            <p>Uwagi: {{ comments }}</p>
-            <p>Pozdrawiamy.</p>
         </td>
     </tr>
 
@@ -30,40 +27,32 @@
                 <tr>
                     <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
                         <p>
-                            <strong>Dane do konta</strong>
-                            <br>Login: <strong>{{ email }}</strong>
-                            <br>Hasło: <strong>{{ password }}</strong>
-                            <br>Link do panelu: <strong><a href="{{ app.request.getSchemeAndHttpHost() }}{{ path('home') }}">Panel klienta</a></strong>
-                        </p>
-                    </td>
-                </tr>
-            </table>
-            <table width="100%" style=" width:100%; border:none; border-collapse:collapse; border-spacing:0;">
-                <tr>
-                    <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
-                        <p>
                             <strong>Twoje dane </strong>
-                            <br>Imię i nazwisko: <strong>{{ user.name }} {{ user.surname }}</strong>
-                            <br>Telefon: <strong>{{ user.phone }}</strong>
-                            <br>Email: <strong>{{ user.email }}</strong>
-                            <br>Adres: <strong>{{ user.place }} {{ user.postCode }} {{ user.street }} {{ user.houseNumber }}</strong>
+                            <br>Imię i nazwisko: {{ user.name }} {{ user.surname }}
+                            <br>Telefon: {{ user.phone }}
+                            <br>Email: {{ user.email }}
+                            <br>Adres: {{ user.place }} {{ user.postCode }} {{ user.street }} {{ user.houseNumber }}
                         </p>
-                    </td>
-                    <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
+
                         <p>
-                            <strong>Miejsce zlecenia </strong>
-                            <br>Adres: <strong>{{ task.place }} {{ task.postCode }} {{ task.street }} {{ task.houseNumber }}</strong>
-                            <br>Numer działki: <strong>{{ task.nrPlot }}</strong>
+                            <strong>Miejsce zlecenia: </strong>
+                            <br>Adres: {{ task.place }} {{ task.postCode }} {{ task.street }} {{ task.houseNumber }}
+                            <br>Numer działki: {{ task.nrPlot }}
                         </p>
-                    </td>
-                    <td style="text-align:left; vertical-align:bottom; padding:0 0 20px;">
+
                         <p>
-                            <strong>Dane zlecenia </strong>
-                            <br>Rodzaja zlecenia: <strong>{{ task.task }}</strong>
+                            <strong>Zlecenie: </strong>
+                            <br>Rodzaja zlecenia: {{ task.task }}
                             {% if task.term %}
-                                <br>Szacowany temin realizacji: <strong>{{ task.term }}</strong>
+                                <br>Szacowany temin realizacji: {{ task.term }}
                             {% endif %}
-                            <br>Uwagi: <strong>{{ task.comments }}</strong>
+                            <br>Uwagi: {{ task.comments }}
+                        </p>
+
+                        <p>
+                            <h2>Koszt wykonania zlecenia <b>{{ task.valuation }}</b>zł brutto</h2>
+                            Termin wykonania zlecenia: {{ task.date|date('d/m/Y') }}
+                            <br>Dodatkowe informacje: {{ task.valuationComments }}
                         </p>
                     </td>
                 </tr>
@@ -71,3 +60,9 @@
         </td>
     </tr>
 </table>
+<p>
+    Z poważaniem
+    <br>Zakład Wierceń Studziennych Jerzy Wilman
+    <br>ul. Chodkiewicza 111
+    <br>25-139 Kielce
+</p>

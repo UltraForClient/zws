@@ -18,7 +18,7 @@
                 <tbody>
                 {% for key, task in tasks %}
                 <tr>
-                    <th scope="row">{{ key + 1 }}</th>
+                    <th scope="row">ZWS/{{ 'now'|date('Y') }}/{{ task.id }}</th>
                     <td>{{ task.place }}</td>
                     <td>{{ task.street }} {{ task.houseNumber }}</td>
                     <td>{{ task.task }}</td>

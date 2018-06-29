@@ -21,6 +21,8 @@ class TaskType extends AbstractType
             ->add('nrPlot')
             ->add('comments')
             ->add('term')
+            ->add('date')
+            ->add('valuationComments')
         ;
     }
 

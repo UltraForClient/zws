@@ -6,52 +6,52 @@
             <h5>Formularz wyceny</h5>
         </div>
         <div class="m-portlet__body">
-            <div class="form-group m-form__group row">
-                <div class="col-10 ml-auto">
-                    <h3 class="m-form__section">
-                        Informacje o zleceniu
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="m-form__section h3">
+                        <p>Informacje o zleceniu</p>
                     </h3>
                 </div>
             </div>
-            <div class="form-group m-form__group row">
-                <label class="col-2 col-form-label">
+            <div class="row">
+                <strong class="col-4">
                     Adres
-                </label>
-                <div class="col-7">
-                    <p class="form-control m-input">{{ task.postCode }} {{ task.place }} {{ task.street }} {{ task.houseNumber }}</p>
+                </strong>
+                <div class="col-8">
+                    <p class="col-form-label m-input">{{ task.postCode }} {{ task.place }} {{ task.street }} {{ task.houseNumber }}</p>
                 </div>
             </div>
-            <div class="form-group m-form__group row">
-                <label class="col-2 col-form-label">
+            <div class="row">
+                <strong class="col-4">
                     Rodzaj zlecenia:
-                </label>
-                <div class="col-7">
-                    <p class="form-control m-input">{{ task.task }}</p>
+                </strong>
+                <div class="col-8">
+                    <p class="col-form-label m-input">{{ task.task }}</p>
                 </div>
             </div>
-            <div class="form-group m-form__group row">
-                <label class="col-2 col-form-label">
-                    Uwagi clienta:
-                </label>
-                <div class="col-7">
-                    <p class="form-control m-input" style="height: 100%">{{ task.comments }}</p>
+            <div class="row">
+                <strong class="col-4">
+                    Uwagi klienta:
+                </strong>
+                <div class="col-8">
+                    <p class="col-form-label m-input" style="height: 100%">{{ task.comments }}</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-6">
-                <h4>Cena w PLN<span>*</span></h4>
-                <input type="number" class="form-control" id="price" name="price" placeholder="458" required>
+                <h4>Cena brutto<span>*</span></h4>
+                <input type="text" class="form-control" id="price" name="price" required>
             </div>
             <div class="form-group col-6">
-                <h4>Przewidywany czas rozpoczęcia <span>*</span></h4>
-                <input type="date" class="form-control" id="date" name="date" placeholder="25" required>
+                <h4>Termin rozpoczęcia zlecenia <span>*</span></h4>
+                <input type="date" class="form-control" id="date" name="date" required>
             </div>
         </div>
         <div class="form-row no-after">
             <div class="form-group col-6-2" style="width:100%">
                 <h4>Uwagi do zlecenia <span>*</span></h4>
-                <textarea class="form-control" placeholder="" name="comments" required></textarea>
+                <textarea class="form-control" name="valuationComments" required></textarea>
             </div>
         </div>
         <div class="modal-footer">

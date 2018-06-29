@@ -8,7 +8,7 @@
             <th>Imię i nazwisko</th>
             <th>E-mail</th>
             <th>Rodzaj</th>
-            <th>Miejscowość</th>
+            <th>Data</th>
             <th>Wycena</th>
             <th>Data przesłania</th>
         </tr>
@@ -16,11 +16,11 @@
         <tbody>
         {% for key, task in tasks %}
             <tr {% if task.valuation %}class="table-success"{% endif %}>
-                <th scope="row">{{ key + 1 }}</th>
+                <th scope="row">ZWS/{{ 'now'|date('Y') }}/{{ task.id }}</th>
                 <td><a href="{{ path('admin_user_one', {id: task.user.id}) }}">{{ task.user.name }} {{ task.user.surname }}</a></td>
                 <td>{{ task.user.email }}</td>
                 <td><a href="{{ path('admin_task_one', {id: task.id}) }}">{{ task.task }}</a></td>
-                <td>{{ task.place }}</td>
+                <td>{{ task.publishedAt|date('d/m/Y') }}</td>
                 <td>{% if task.valuation %} {{ task.valuation }}zł {% else %} BRAK {% endif %}</td>
                 <td>
                     {% if not task.valuation %}<a class="btn btn-success" href="{{ path('valuation', {id: task.id}) }}">Wyceń</a>{% endif %}

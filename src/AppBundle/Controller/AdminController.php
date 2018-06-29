@@ -32,7 +32,7 @@ class AdminController extends Controller
         $tasks = $this->em->getRepository(Task::class)->findAll();
 
         return $this->render('admin/index.html.twig', [
-            'tasks' => $tasks,
+            'tasks' => array_reverse($tasks),
             'task' => true
         ]);
     }
@@ -84,7 +84,7 @@ class AdminController extends Controller
         if(count($req) > 0) {
             $task->setValuation($req['price']);
 
-            $this->sendMail($task->getUser()->getEmail(), $req);
+            $this->sendMail($task);
 
             $this->em->flush();
 
@@ -153,16 +153,15 @@ class AdminController extends Controller
         ]);
     }
 
-    private function sendMail($email, array $param)
+    private function sendMail($task)
     {
         $message = (new \Swift_Message('Zakład wiercenia Studziennych'))
             ->setFrom('zlecenia@zws.com.pl')
-            ->setTo($email)
+            ->setTo($task->getUser()->getEmail())
             ->setBody(
                 $this->renderView('email/valuation.html.twig', [
-                    'price' => $param['price'],
-                    'date' => $param['date'],
-                    'comments' => $param['comments']
+                    'task' => $task,
+                    'user' => $task->getUser()
                 ]),
                 'text/html'
             );

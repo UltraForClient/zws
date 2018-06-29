@@ -27,11 +27,13 @@
                             {% if error %}
                                 <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                             {% endif %}
-                            <div class="form-group m-form__group">
-                                <input class="form-control m-input" type="text" placeholder="Email" id="username" name="_username" value="{{ last_username }}" autocomplete="off">
+                            <div class="form-group m-form__group" style="margin-top: 15px;">
+                                <label for="username" class="label" style="display: block;text-align: left;font-size: 20px;margin: 10px 0 5px 0;">Email</label>
+                                <input class="form-control m-input" style="margin: 0;" type="text" id="username" name="_username" value="{{ last_username }}" autocomplete="off">
                             </div>
-                            <div class="form-group m-form__group">
-                                <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Hasło" id="password" name="_password" value="{{ last_username }}">
+                            <div class="form-group m-form__group" style="margin-top: 15px;">
+                                <label for="password" class="label" style="display: block;text-align: left;font-size: 20px;margin: 10px 0 5px 0;">Hasło</label>
+                                <input class="form-control m-input m-login__form-input--last" style="margin: 0;" type="password" id="password" name="_password" value="{{ last_username }}">
                             </div>
                             <div class="row m-login__form-sub">
                                 <div class="col m--align-right m-login__form-right">
